@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Finder App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <!-- Sidebar -->
+  <div class="fixed top-0 left-0 w-56 h-screen bg-orange-500 text-white px-4 py-8 shadow-md z-50">
+    <h2 class="text-xl font-bold mb-8 flex items-center gap-2"><i class="fas fa-utensils"></i> RecipeFinder</h2>
+    <ul class="space-y-4">
+      <li><a href="index.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="favorites.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-heart"></i> Favorites</a></li>
+      <li><a href="https://github.com/Irfansyah001/SearchRecipe_PDW_team-project" target="_blank" class="flex items-center gap-2 hover:underline"><i class="fas fa-info-circle"></i> About</a></li>
+    </ul>
+  </div>
+
+  <!-- Main content -->
+  <div class="ml-56 p-6">
+    <header class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-orange-500 mb-2">Welcome to Recipe Finder</h1>
+      <p class="text-gray-600">Find delicious recipes from around the world</p>
+    </header>
+
+    <p class="text-center text-sm text-gray-500 mb-6">
+      Data from <a href="https://www.themealdb.com/api.php" class="text-orange-500 hover:underline" target="_blank">TheMealDB 🧑‍🍳</a>
+    </p>
+
+    <div class="flex justify-center gap-2 mb-6 max-w-md mx-auto">
+      <input type="text" id="search-input" placeholder="Search for meals or keywords"
+        class="flex-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400" />
+      <button id="search-btn"
+        class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold transition">Search</button>
+    </div>
+
+    <div id="error-container" class="hidden bg-orange-100 border border-orange-300 text-orange-700 p-4 rounded-lg text-center mb-6">
+      <p>No meals found. Try another search term!</p>
+    </div>
+
+    <div id="result-heading" class="text-center text-lg font-semibold mb-4"></div>
+
+    <div id="meals" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+    <div id="meal-details" class="hidden bg-white rounded-lg shadow-md p-6 mt-10">
+      <button id="back-btn"
+        class="mb-4 border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition px-4 py-2 rounded-lg flex items-center gap-2">
+        <i class="fas fa-arrow-left"></i> Back to recipes
+      </button>
+      <div class="meal-details-content overflow-y-auto max-h-[90vh]"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
