@@ -110,4 +110,4 @@ document.addEventListener("DOMContentLoaded", () => {
     mealDetails.classList.add("hidden");
     container.classList.remove("hidden");
   });
-});
+}); //end
